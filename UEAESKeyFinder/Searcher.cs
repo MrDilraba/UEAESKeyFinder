@@ -225,7 +225,7 @@ public class Searcher
         {
             string EngineVersionStr = SearchEngineVersion();
             int EngineVersion = 17;
-            if (EngineVersionStr != "") EngineVersion = Convert.ToInt32(EngineVersionStr.Split(".")[1]);
+            if (EngineVersionStr != null && EngineVersionStr != "" && EngineVersionStr.Contains(".")) EngineVersion = Convert.ToInt32(EngineVersionStr.Split(".")[1]);
             if (EngineVersion < 18)
             {
                 // Let's just try something, not sure if that works for all games

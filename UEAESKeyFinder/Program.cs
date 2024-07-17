@@ -160,7 +160,7 @@ namespace UEAesKeyFinder
                 Console.Write("\n" + txt);
                 Console.ForegroundColor = ConsoleColor.White;
                 int EngineVersionI = 17;
-                if (EngineVersion != "") EngineVersionI = Convert.ToInt32(EngineVersion.Split(".")[1]);
+                if (EngineVersion != null && EngineVersion != "" && EngineVersion.Contains(".")) EngineVersionI = Convert.ToInt32(EngineVersion.Split(".")[1]);
                 if (EngineVersionI < 18)
                 {
                     foreach (KeyValuePair<ulong, string> o in aesKeys)
